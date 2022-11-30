@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Bodoni Moda';
+    src: local('Bodoni Moda Regular'), local('BodoniModa-Regular'),
+        url('/fonts/BodoniModa-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bodoni Moda';
+    src: local('Bodoni Moda Italic'), local('BodoniModa-Italic'),
+        url('/fonts/BodoniModa-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+

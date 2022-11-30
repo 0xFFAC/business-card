@@ -1,0 +1,171 @@
+:root {
+  --scale: 1.4;
+  --section-margin: 16px
+}
+
+body {
+  font-family: 'Bodoni Moda', serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+body *:focus-visible {
+  outline: #00F solid 2px;
+}
+
+.main {
+  margin: 0px auto 48px auto;
+  /* width: calc(336px * var(--scale)); */
+  width: 440px;
+  max-width: calc(100% - 32px);
+}
+
+.card-editor__field {
+  position: relative;
+  margin: 4px auto;
+}
+
+.card {
+  border: 1px solid black;
+  margin: var(--section-margin) auto;
+  overflow: hidden;
+  width: 100%;
+  /* height: calc(var(--scale) * 192px); */
+  box-sizing: border-box;
+  aspect-ratio: 336 / 192;
+  /* width: calc(var(--scale) * 336px); */
+}
+
+#card-image svg {
+  display: block;
+  box-sizing: border-box;
+  transform-origin: top left;
+  transform: scale(calc(100% * var(--scale)));
+}
+
+.card-editor__field label {
+  position: absolute;
+  text-align: right;
+  transform: translate(-100%, 50%);
+  left: -4px;
+  bottom: 12px;
+  text-transform: lowercase;
+}
+
+.card-editor__field label::after {
+  content: ":";
+}
+
+.card-editor__field input {
+  width: 100%;
+  height: 24px;
+  /* font-family: inherit; */
+  box-sizing: border-box;
+  border: 1px solid black;
+  border-radius: 0px;
+  padding-left: 6px;
+}
+
+.card-editor__field input::placeholder {
+  text-overflow: ellipsis;
+}
+
+.card-save {
+  border: 1px solid black;
+  box-sizing: border-box;
+  width: 100%;
+  margin: calc(var(--section-margin) - 12px) 0px;
+}
+
+.card-save input[type=button] {
+  background-color: #D8D8D8;
+  border: 1px solid #666;
+  border-radius: 3px;
+}
+
+.card-save input[type=button]:hover {
+  background-color: #BBB;
+}
+
+.button {
+  color: #000E;
+  text-decoration: none;
+  background-color: #D8D8D8;
+  border: 1px solid #666;
+  border-radius: 3px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 13.3333px;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+.button:hover {
+  background-color: #BBB;
+}
+
+.noscript {
+  flex-grow: 1;
+  margin: auto;
+}
+
+.noscript > p {
+  background-color: #F00;
+  padding: 6px 12px;
+}
+
+.footer {
+	font-family: monospace;
+	text-transform: lowercase;
+	color: #FFF;
+	background-color: #000;
+	padding: 20px;
+	width: 100%;
+	bottom: 0;
+	box-sizing: border-box;
+}
+
+.footer a {
+  color: #FFF;
+}
+
+.footer a:hover {
+  color: #FF2F92;
+}
+
+@media screen and (max-width: 740px) {
+  .card-editor__field {
+    margin: 6px 0px;
+  }
+  .card-editor__field label {
+    position: relative;
+    left: 0;
+    bottom: unset;
+    transform: none;
+  }
+
+  .card-editor__field label::after {
+    content: "";
+  }
+}
+
+@media print {
+  .main {
+    margin: unset;
+  }
+
+  .footer,
+  .main > *:not(.card) {
+    display: none;
+  }
+
+  .card {
+    --scale: 1;
+    width: 3.5in;
+    height: 2in;
+  }
+}
