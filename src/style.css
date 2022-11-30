@@ -44,6 +44,7 @@ body *:focus-visible {
   box-sizing: border-box;
   transform-origin: top left;
   transform: scale(calc(100% * var(--scale)));
+  user-select: none;
 }
 
 .card-editor__field label {
