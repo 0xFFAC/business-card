@@ -2,40 +2,47 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
     <title>Business Card Generator</title>
     <meta name="description" content="A very nice business card." />
+    <meta
+      name="keywords"
+      content="American Psycho, Patrick Bateman, Paul Allen, business card maker, business card generator"
+    />
   </head>
   <body>
     <main class="main">
       <h1>Business Card Generator</h1>
       <div class="card" id="card-container">
-        <div id="card-image"></div>
+        <img id="card-image" />
       </div>
       <form class="card-editor">
         <div class="card-editor__field">
-          <label for="first-name">First Name</label>
-          <input type="text" id="first-name" name="first-name" />
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName" />
         </div>
         <div class="card-editor__field">
-          <label for="last-name">Last Name</label>
-          <input type="text" id="last-name" name="last-name" />
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName" />
         </div>
         <div class="card-editor__field">
           <label for="title">Title</label>
           <input type="text" id="title" name="title" />
         </div>
         <div class="card-editor__field">
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" />
+          <label for="phoneNumber">phone Number</label>
+          <input type="tel" id="phoneNumber" name="phoneNumber" />
         </div>
         <div class="card-editor__field">
-          <label for="company-name">Company Name</label>
-          <input type="text" id="company-name" name="company-name" />
+          <label for="companyName">Company Name</label>
+          <input type="text" id="companyName" name="companyName" />
         </div>
         <div class="card-editor__field">
-          <label for="company-subtitle">Company Subtitle</label>
-          <input type="text" id="company-subtitle" name="company-subtitle" />
+          <label for="companySubtitle">Company Subtitle</label>
+          <input type="text" id="companySubtitle" name="companySubtitle" />
         </div>
         <div class="card-editor__field">
           <label for="address">Address</label>
@@ -43,25 +50,43 @@
         </div>
       </form>
       <fieldset class="card-save">
-        <legend>save</legend>
+        <legend>export</legend>
         <div class="card-save__buttons">
-          <a download="business-card.svg" class="button" type="button" id="svg-download">svg</a>
-          <a download="business-card.png" class="button" type="button" id="png-download">png</a>
+          <a
+            download="business-card.svg"
+            class="button"
+            type="button"
+            id="svg-download"
+            >svg</a
+          >
+          <a
+            download="business-card.png"
+            class="button"
+            type="button"
+            id="png-download"
+            >png</a
+          >
           <input type="button" value="print" class="button" onclick="print()" />
         </div>
       </fieldset>
+      <a
+        class="source-link"
+        href="https://github.com/0xFFAC/business-card"
+        target="_blank"
+        rel="noopener"
+        title="View source code on GitHub"
+        ><img src="/github-mark.svg" width="16px" alt="GitHub icon"
+      /></a>
     </main>
     <noscript class="noscript">
       <p>This page needs JavaScript to function.</p>
     </noscript>
     <footer class="footer">
       <div style="float: left">
-          A <a href="https://0xff.ac">0xff.ac</a> website.
+        A <a href="https://0xff.ac">0xff.ac</a> website.
       </div>
-      <div style="float: right">
-          2021 - 2022
-      </div>
+      <div style="float: right">2021 - 2023</div>
     </footer>
-    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>

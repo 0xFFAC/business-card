@@ -6,14 +6,6 @@ export default function svgTemplate({
   companyName,
   companySubtitle,
   address,
-}: {
-  firstName: string;
-  lastName: string;
-  title: string;
-  phoneNumber: string;
-  companyName: string;
-  companySubtitle: string;
-  address: string;
 }) {
   const space = firstName && lastName ? " " : "";
   return /* svg */ `
@@ -32,12 +24,15 @@ export default function svgTemplate({
     <g id="layer1">
       <text xml:space="preserve" style="font-size:3.91664px;line-height:1.25;font-family:&quot;Sillian Rail&quot;;-inkscape-font-specification:&quot;Sillian Rail&quot;;stroke-width:.264583;letter-spacing:-.1666875px" x="3.3324" y="10.2643" id="card-phone"><tspan id="tspan1150" style="stroke-width:.264583" x="3.3324" y="10.2643">${phoneNumber}</tspan></text>
       <g id="g1228" transform="translate(0 .0605)" text-anchor="end">
-        <text xml:space="preserve" style="font-size:3.91664px;line-height:0;font-family:&quot;Sillian Rail&quot;;-inkscape-font-specification:&quot;Sillian Rail&quot;;letter-spacing:.100542px;word-spacing:.492125px;direction:ltr;stroke-width:.264583" x="82.8829" y="10.0519" id="card-company-name"><tspan id="tspan1154" style="line-height:1.25;direction:ltr;stroke-width:.264583" x="82.9834" y="10.0519">${companyName}</tspan></text>
+        <text xml:space="preserve" style="font-size:3.91664px;line-height:0;font-family:&quot;Sillian Rail&quot;;-inkscape-font-specification:&quot;Sillian Rail&quot;;letter-spacing:.100542px;word-spacing:.492125px;direction:ltr;stroke-width:.264583" x="82.8829" y="10.0519" id="card-company-name"><tspan id="tspan1154" style="line-height:1.25;direction:ltr;stroke-width:.264583" x="82.9834" y="10.0519">${companyName.replaceAll(
+          "&",
+          `<tspan font-size="2.6458px">&amp;</tspan>`,
+        )}</tspan></text>
         <text xml:space="preserve" style="font-size:2.11197px;line-height:1.25;font-family:&quot;Sillian Rail&quot;;-inkscape-font-specification:&quot;Sillian Rail&quot;;letter-spacing:.137277px;direction:ltr;stroke-width:.264583" x="82.9817" y="12.4501" id="card-company-subtitle" transform="scale(.99784 1.00217)"><tspan id="tspan1182" style="font-size:2.11197px;direction:ltr;stroke-width:.264583" x="83.119" y="12.4501">${companySubtitle}</tspan></text>
       </g>
       <g id="g1195" transform="translate(1.1617)" text-anchor="middle">
         <text xml:space="preserve" style="font-size:3.42785px;line-height:1.25;font-family:&quot;Sillian Rail&quot;;-inkscape-font-specification:&quot;Sillian Rail&quot;;letter-spacing:.09525px;stroke-width:.264583" x="42.29" y="29.7994" id="card-title"><tspan style="stroke-width:.264583" x="42.3377" y="29.7994">${title}</tspan></text>
-        <text xml:space="preserve" style="font-size:3.84415px;line-height:1.25;font-family:&quot;Sillian Rail&quot;;-inkscape-font-specification:&quot;Sillian Rail&quot;;word-spacing:-.185208px;display:inline;stroke-width:.264583" x="42.0213" y="25.2808" id="card-name"><tspan id="tspan1209" style="stroke-width:.264583" x="41.889" y="25.2808"><tspan id="card-first-name" style="letter-spacing:.09525px">${firstName}</tspan>${space}<tspan id="card-last-name" style="letter-spacing:-.264583px">${lastName}</tspan></tspan></text>
+        <text xml:space="preserve" style="font-size:3.84415px;line-height:1.25;font-family:&quot;Sillian Rail&quot;;-inkscape-font-specification:&quot;Sillian Rail&quot;;word-spacing:-.185208px;display:inline;stroke-width:.264583" x="42.0213" y="25.2808" id="card-name"><tspan id="tspan1209" style="stroke-width:.264583" x="41.889" y="25.2808"><tspan id="card-first-name" style="letter-spacing:.09525px">${firstName}</tspan>${space}<tspan id="card-last-name" style="letter-spacing:-.264583px">${lastName.toUpperCase()}</tspan></tspan></text>
       </g>
       <text xml:space="preserve" style="font-size:2.71338px;line-height:1.25;font-family:&quot;Sillian Rail&quot;;-inkscape-font-specification:&quot;Sillian Rail&quot;;letter-spacing:.0502708px;word-spacing:-.254px;stroke-width:.264583" x="43.7756" y="47.5552" id="card-address" text-anchor="middle"><tspan id="tspan1125" style="font-size:2.71338px;stroke-width:.264583" x="43.8007" y="47.5552">${address}</tspan></text>
     </g>
